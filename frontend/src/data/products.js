@@ -10,77 +10,22 @@ export const COMPANY = {
   logo: "/zihamo-logo.png",
 };
 
-const IMG = {
-  stationery: [
-    "https://images.unsplash.com/photo-1603188389888-7b80bd0a7e3e?crop=entropy&cs=srgb&fm=jpg&q=85&w=1000",
-    "https://images.unsplash.com/photo-1617177435596-1c9e30d6d608?crop=entropy&cs=srgb&fm=jpg&q=85&w=1000",
-    "https://images.unsplash.com/photo-1455390582262-044cdead277a?crop=entropy&cs=srgb&fm=jpg&q=85&w=1000",
-    "https://images.unsplash.com/photo-1518674660708-0e2c0473e68e?crop=entropy&cs=srgb&fm=jpg&q=85&w=1000",
-    "https://images.unsplash.com/photo-1722927731527-a6cd21b33b27?crop=entropy&cs=srgb&fm=jpg&q=85&w=1000",
-  ],
-  drinkware: [
-    "https://images.unsplash.com/photo-1544003484-3cd181d17917?crop=entropy&cs=srgb&fm=jpg&q=85&w=1000",
-    "https://images.unsplash.com/photo-1602143407151-7111542de6e8?crop=entropy&cs=srgb&fm=jpg&q=85&w=1000",
-    "https://images.unsplash.com/photo-1625708458528-802ec79b1ed8?crop=entropy&cs=srgb&fm=jpg&q=85&w=1000",
-    "https://images.unsplash.com/photo-1570841398791-33942bd1a99f?crop=entropy&cs=srgb&fm=jpg&q=85&w=1000",
-  ],
-  audio: [
-    "https://images.unsplash.com/photo-1520170350707-b2da59970118?crop=entropy&cs=srgb&fm=jpg&q=85&w=1000",
-    "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?crop=entropy&cs=srgb&fm=jpg&q=85&w=1000",
-    "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?crop=entropy&cs=srgb&fm=jpg&q=85&w=1000",
-    "https://images.unsplash.com/photo-1589256469067-ea99122bbdc4?crop=entropy&cs=srgb&fm=jpg&q=85&w=1000",
-    "https://images.unsplash.com/photo-1578319439584-104c94d37305?crop=entropy&cs=srgb&fm=jpg&q=85&w=1000",
-  ],
-  tech: [
-    "https://images.unsplash.com/photo-1585995603413-eb35b5f4a50b?crop=entropy&cs=srgb&fm=jpg&q=85&w=1000",
-    "https://images.unsplash.com/photo-1566554738544-d962991c3fee?crop=entropy&cs=srgb&fm=jpg&q=85&w=1000",
-    "https://images.unsplash.com/photo-1636115305669-9096bffe87fd?crop=entropy&cs=srgb&fm=jpg&q=85&w=1000",
-  ],
-  desk: [
-    "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?crop=entropy&cs=srgb&fm=jpg&q=85&w=1000",
-    "https://images.unsplash.com/photo-1605084213884-05741ad703a9?crop=entropy&cs=srgb&fm=jpg&q=85&w=1000",
-    "https://images.unsplash.com/photo-1718803597223-f7beeb310d3b?crop=entropy&cs=srgb&fm=jpg&q=85&w=1000",
-    "https://images.unsplash.com/photo-1644463589256-02679b9c0767?crop=entropy&cs=srgb&fm=jpg&q=85&w=1000",
-  ],
-  wellness: [
-    "https://images.unsplash.com/photo-1591291621164-2c6367723315?crop=entropy&cs=srgb&fm=jpg&q=85&w=1000",
-    "https://images.unsplash.com/photo-1621886178958-be42369fc9e7?crop=entropy&cs=srgb&fm=jpg&q=85&w=1000",
-    "https://images.unsplash.com/photo-1580445206726-c6eace8e02e3?crop=entropy&cs=srgb&fm=jpg&q=85&w=1000",
-    "https://images.unsplash.com/photo-1621554012188-c3f2280703c3?crop=entropy&cs=srgb&fm=jpg&q=85&w=1000",
-  ],
-  bags: [
-    "https://images.unsplash.com/photo-1622560257067-108402fcedc0?crop=entropy&cs=srgb&fm=jpg&q=85&w=1000",
-    "https://images.unsplash.com/photo-1549943872-f7ff0b2b51be?crop=entropy&cs=srgb&fm=jpg&q=85&w=1000",
-    "https://images.unsplash.com/photo-1622560481979-f5b0174242a0?crop=entropy&cs=srgb&fm=jpg&q=85&w=1000",
-  ],
-  apparel: [
-    "https://images.unsplash.com/photo-1607160199580-1b0c9b736b66?crop=entropy&cs=srgb&fm=jpg&q=85&w=1000",
-    "https://images.unsplash.com/photo-1620799139834-6b8f844fbe61?crop=entropy&cs=srgb&fm=jpg&q=85&w=1000",
-    "https://images.unsplash.com/photo-1620799139507-2a76f79a2f4d?crop=entropy&cs=srgb&fm=jpg&q=85&w=1000",
-  ],
-  trophies: [
-    "https://images.unsplash.com/photo-1782879428271-eaa66c9c2c63?crop=entropy&cs=srgb&fm=jpg&q=85&w=1000",
-    "https://images.unsplash.com/photo-1782712307075-ab2fd761e795?crop=entropy&cs=srgb&fm=jpg&q=85&w=1000",
-    "https://images.unsplash.com/photo-1782713401266-6d04fdddb304?crop=entropy&cs=srgb&fm=jpg&q=85&w=1000",
-  ],
-  hampers: [
-    "https://images.unsplash.com/photo-1645291780910-d7b8a4f969bc?crop=entropy&cs=srgb&fm=jpg&q=85&w=1000",
-    "https://images.unsplash.com/photo-1662993924949-2b2d68c08cee?crop=entropy&cs=srgb&fm=jpg&q=85&w=1000",
-    "https://images.unsplash.com/photo-1603189864792-cb81bf683b17?crop=entropy&cs=srgb&fm=jpg&q=85&w=1000",
-  ],
+const skuImage = (note) => {
+  const sku = note.split("·").pop().trim();
+  return { sku, image: `/products/${sku.toLowerCase()}.jpg` };
 };
 
 export const CATEGORIES = [
-  { id: "stationery", index: "01", name: "Stationery", tagline: "Diaries & luxury pens", image: IMG.stationery[0] },
-  { id: "drinkware", index: "02", name: "Drinkware", tagline: "Mugs, bottles & flasks", image: IMG.drinkware[0] },
-  { id: "audio", index: "03", name: "Audio", tagline: "Speakers & earwear", image: IMG.audio[0] },
-  { id: "tech", index: "04", name: "Tech Accessories", tagline: "Power & charging", image: IMG.tech[0] },
-  { id: "desk", index: "05", name: "Desk Accessories", tagline: "Clocks, lamps & holders", image: IMG.desk[0] },
-  { id: "wellness", index: "06", name: "Wellness & Fitness", tagline: "Recover & move", image: IMG.wellness[0] },
-  { id: "bags", index: "07", name: "Bags & Luggage", tagline: "Carry in style", image: IMG.bags[0] },
-  { id: "apparel", index: "08", name: "Apparel", tagline: "Branded to wear", image: IMG.apparel[0] },
-  { id: "trophies", index: "09", name: "Trophies & Awards", tagline: "Recognise the best", image: IMG.trophies[0] },
-  { id: "hampers", index: "10", name: "Gift Hampers", tagline: "Curated & gourmet", image: IMG.hampers[0] },
+  { id: "stationery", index: "01", name: "Stationery", tagline: "Diaries & luxury pens", image: "/products/diry-001.jpg" },
+  { id: "drinkware", index: "02", name: "Drinkware", tagline: "Mugs, bottles & flasks", image: "/products/tumb173.jpg" },
+  { id: "audio", index: "03", name: "Audio", tagline: "Speakers & earwear", image: "/products/bth001.jpg" },
+  { id: "tech", index: "04", name: "Tech Accessories", tagline: "Power & charging", image: "/products/tech020.jpg" },
+  { id: "desk", index: "05", name: "Desk Accessories", tagline: "Clocks, lamps & holders", image: "/products/lmp-005.jpg" },
+  { id: "wellness", index: "06", name: "Wellness & Fitness", tagline: "Recover & move", image: "/products/wef-001.jpg" },
+  { id: "bags", index: "07", name: "Bags & Luggage", tagline: "Carry in style", image: "/products/bags017.jpg" },
+  { id: "apparel", index: "08", name: "Apparel", tagline: "Branded to wear", image: "/products/app215.jpg" },
+  { id: "trophies", index: "09", name: "Trophies & Awards", tagline: "Recognise the best", image: "/products/trop-007.jpg" },
+  { id: "hampers", index: "10", name: "Gift Hampers", tagline: "Curated & gourmet", image: "/products/kit-h3.jpg" },
 ];
 
 const RAW = {
@@ -203,13 +148,10 @@ const RAW = {
 };
 
 export const PRODUCTS = Object.entries(RAW).flatMap(([cat, items]) =>
-  items.map(([name, note], i) => ({
-    id: `${cat}-${i + 1}`,
-    category: cat,
-    name,
-    note,
-    image: IMG[cat][i % IMG[cat].length],
-  }))
+  items.map(([name, note], i) => {
+    const { sku, image } = skuImage(note);
+    return { id: `${cat}-${i + 1}`, category: cat, name, note, sku, image };
+  })
 );
 
 export const HERO_IMAGE =

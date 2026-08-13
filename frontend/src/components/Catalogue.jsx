@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Plus, Check } from "lucide-react";
+import { Plus, Check, Search, X } from "lucide-react";
 import { toast } from "sonner";
 import { Reveal, Overline } from "./Motion";
 import { PRODUCTS, CATEGORIES } from "../data/products";
@@ -22,11 +22,12 @@ const ProductCard = ({ p, i }) => {
   return (
     <Reveal delay={(i % 4) * 0.06}>
       <div data-testid={`product-${p.id}`} className="group">
-        <div className="relative aspect-[4/5] overflow-hidden bg-[#EAE7E1]">
+        <div className="relative aspect-[4/5] overflow-hidden bg-white">
           <img
             src={p.image}
             alt={p.name}
-            className="h-full w-full object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
+            loading="lazy"
+            className="h-full w-full object-contain p-6 transition-transform duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
           />
           <button
             data-testid={`add-${p.id}`}
@@ -51,7 +52,13 @@ const ProductCard = ({ p, i }) => {
 
 export const Catalogue = () => {
   const [filter, setFilter] = useState("all");
-  const list = filter === "all" ? PRODUCTS : PRODUCTS.filter((p) => p.category === filter);
+  const [query, setQuery] = useState("");
+  const q = query.trim().toLowerCase();
+  const list = PRODUCTS.filter(
+    (p) =>
+      (filter === "all" || p.category === filter) &&
+      (!q || p.name.toLowerCase().includes(q) || p.sku.toLowerCase().includes(q) || p.note.toLowerCase().includes(q))
+  );
 
   return (
     <section id="catalogue" data-testid="catalogue" className="bg-[#EAE7E1]/50 px-6 py-28 md:px-12 md:py-40">
@@ -63,7 +70,29 @@ export const Catalogue = () => {
           </h2>
         </Reveal>
 
-        <div data-testid="filters" className="mb-14 flex flex-wrap gap-3 border-y border-black/10 py-5">
+        <div className="mb-8 flex items-center gap-3 border-b border-black/10 pb-5">
+          <Search className="h-5 w-5 shrink-0 text-[#153328]/50" strokeWidth={1.5} />
+          <input
+            data-testid="catalogue-search"
+            type="text"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Search by name or SKU — e.g. Parker, BOT101…"
+            className="w-full bg-transparent font-serif-z text-xl font-light text-[#153328] placeholder:text-[#153328]/35 focus:outline-none md:text-2xl"
+          />
+          {query && (
+            <button
+              data-testid="catalogue-search-clear"
+              onClick={() => setQuery("")}
+              aria-label="Clear search"
+              className="shrink-0 p-1 text-[#153328]/50 transition-colors hover:text-[#153328]"
+            >
+              <X className="h-5 w-5" strokeWidth={1.5} />
+            </button>
+          )}
+        </div>
+
+        <div data-testid="filters" className="mb-14 flex flex-wrap items-center gap-3 border-b border-black/10 pb-5">
           {FILTERS.map((f) => (
             <button
               key={f.id}
@@ -78,7 +107,17 @@ export const Catalogue = () => {
               {f.name}
             </button>
           ))}
+          <span data-testid="catalogue-count" className="ml-auto text-sm tracking-wide text-[#153328]/50">
+            {list.length} {list.length === 1 ? "item" : "items"}
+          </span>
         </div>
+
+        {list.length === 0 && (
+          <div data-testid="catalogue-empty" className="py-20 text-center">
+            <p className="font-serif-z text-3xl font-light text-[#153328]">Nothing found for “{query}”.</p>
+            <p className="mt-3 text-sm text-[#4A4A4A]">Try a product name or SKU code — or send us your brief directly.</p>
+          </div>
+        )}
 
         <motion.div layout className="grid grid-cols-2 gap-x-6 gap-y-14 md:grid-cols-3 lg:grid-cols-4">
           <AnimatePresence mode="popLayout">

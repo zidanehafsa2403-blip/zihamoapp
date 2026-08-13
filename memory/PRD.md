@@ -52,3 +52,11 @@ stationery, healthy food, wellness, grooming, audio, and work accessories. Must 
 - Replaced sample catalogue with 96 real products across 10 real categories (Stationery, Drinkware, Audio, Tech Accessories, Desk Accessories, Wellness & Fitness, Bags & Luggage, Apparel, Trophies & Awards, Gift Hampers) with real names, SKUs and specs from the PDF.
 - Applied real company details: tagline, about, Mumbai studio address, `sales@zihamo.com`, `www.zihamo.com`, and ONLY the first mobile number (+91 97264 71223) per request.
 - Verified: 96 products, 10 categories, 11 filters, 0 broken images (110/110), logo loads, no console errors.
+
+## Update (2026-06) — Real product photos + catalogue search
+- Extracted all 96 real product photos per SKU from the client PDF (bbox matching of SKU text → nearest image, watermark/logo images excluded, caption text trimmed). Saved to `/frontend/public/products/{sku}.jpg`.
+- `products.js` now derives each product's `sku` and image path from its note; category tiles also use real photos. All Unsplash stock imagery removed.
+- Product cards switched to `object-contain` on white tiles so full product shots are visible.
+- Added catalogue search box (`data-testid="catalogue-search"`): filters by name, SKU, or note; live item count, empty state, clear button. Works combined with category filter pills.
+- Verified via Playwright: SKU search (BOT101→1), name search (parker→1, mug→6), empty state, clear→96, 96 images 0 broken.
+
