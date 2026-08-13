@@ -60,3 +60,6 @@ stationery, healthy food, wellness, grooming, audio, and work accessories. Must 
 - Added catalogue search box (`data-testid="catalogue-search"`): filters by name, SKU, or note; live item count, empty state, clear button. Works combined with category filter pills.
 - Verified via Playwright: SKU search (BOT101→1), name search (parker→1, mug→6), empty state, clear→96, 96 images 0 broken.
 
+## Update (2026-06) — WhatsApp tap-to-chat
+- Floating WhatsApp button (`WhatsAppButton.jsx`, `data-testid="whatsapp-button"`), bottom-left, opens wa.me/919726471223 with a pre-filled enquiry message; hover-expanding "Chat with us" label. Verified live.
+

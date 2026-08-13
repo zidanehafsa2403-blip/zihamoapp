@@ -11,6 +11,7 @@ import { Catalogue } from "@/components/Catalogue";
 import { About } from "@/components/About";
 import { Footer } from "@/components/Footer";
 import { CartSheet } from "@/components/CartSheet";
+import { WhatsAppButton } from "@/components/WhatsAppButton";
 
 function App() {
   useEffect(() => {
@@ -59,6 +60,7 @@ function App() {
         <Footer />
       </div>
       <CartSheet />
+      <WhatsAppButton />
       <Toaster position="bottom-right" theme="dark" />
     </div>
   );
