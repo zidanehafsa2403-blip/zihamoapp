@@ -1,0 +1,118 @@
+{
+  "project_name": "ZIHAMO",
+  "art_direction": "Pharmaceutical Precision meets Botanical Warmth",
+  "theme": "hybrid (light base with massive dark structural blocks)",
+  "typography": {
+    "primary_heading": {
+      "family": "Cormorant Garamond, serif",
+      "weights": ["300", "400", "500"],
+      "usage": "H1, H2, large manifesto numbers, editorial quotes. Never use bold for headings, stick to 300/400 for elegance.",
+      "tracking": "tracking-tight"
+    },
+    "secondary_ui": {
+      "family": "Manrope, sans-serif",
+      "weights": ["300", "400", "600"],
+      "usage": "Body copy, product names, navigation, buttons, overlines.",
+      "tracking_rules": "Overlines must be tracking-[0.2em] uppercase. Body text tracking-normal."
+    },
+    "scale": {
+      "h1": "text-5xl md:text-6xl lg:text-7xl leading-[1.1]",
+      "h2": "text-4xl md:text-5xl lg:text-6xl leading-tight",
+      "h3": "text-2xl md:text-3xl lg:text-4xl leading-snug",
+      "body": "text-base md:text-lg leading-relaxed text-zinc-700",
+      "small_label": "text-xs md:text-sm uppercase tracking-widest text-zinc-500"
+    }
+  },
+  "colors": {
+    "background": {
+      "primary": "#F9F8F6",
+      "secondary": "#EAE7E1",
+      "dark_block": "#0F1C18"
+    },
+    "text": {
+      "primary_dark": "#1A1A1A",
+      "secondary_dark": "#4A4A4A",
+      "light_on_dark": "#F9F8F6",
+      "muted_on_dark": "#A3A3A3"
+    },
+    "brand": {
+      "emerald": "#153328",
+      "warm_sand": "#D5CDBF",
+      "terracotta_accent": "#A34C37"
+    },
+    "ui_elements": {
+      "border_light": "rgba(0,0,0,0.08)",
+      "border_dark": "rgba(255,255,255,0.15)",
+      "button_primary_bg": "#153328",
+      "button_primary_text": "#F9F8F6"
+    }
+  },
+  "visual_enhancers": {
+    "surfaces": {
+      "glass": "backdrop-blur-xl bg-white/70 border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.04)]",
+      "solid_card": "bg-white border border-zinc-200/60 shadow-sm rounded-none"
+    },
+    "borders": "1px solid borders everywhere to create architectural grid structures. Avoid soft rounded borders (max rounded-sm). Use sharp edges for a premium editorial look.",
+    "textures": "Use subtle SVG noise grain overlay fixed at z-0 with opacity 2% to kill digital flatness."
+  },
+  "layouts": {
+    "grid_system": "Asymmetrical Bento and Swiss Grids. md:grid-cols-12 gap-8 or gap-12.",
+    "spacing": "Generous padding. Use py-24 or py-32 for section vertical rhythm. Containers should have ample breathing room.",
+    "alignment": "Left-align dense text and product info. Center-align only brief manifesto statements or marquee content.",
+    "hero_structure": "Min-h-[90vh] flex flex-col justify-end pb-24 px-8 md:px-16. Massive typographic emphasis."
+  },
+  "motion": {
+    "libraries": ["framer-motion", "lenis", "react-fast-marquee"],
+    "hero_reveal": "Kinetic masked line-by-line text reveal on load. Wrap each text line in a hidden overflow container, and translate Y from 100% to 0% with ease-[0.76, 0, 0.24, 1] duration 1s.",
+    "scroll_animations": "Fade and slight translateY (20px) on scroll using framer-motion's whileInView. Stagger children for product grids.",
+    "micro_interactions": "Image scales slightly (scale-105) on hover inside an overflow-hidden wrapper. Buttons slide an arrow icon horizontally on hover.",
+    "parallax": "Use framer-motion useScroll to slightly translate the hero image Y axis for depth."
+  },
+  "components": {
+    "navigation": "Sticky top, crystal glassmorphism header (z-50). Logo left, links center, Cart/Quote button right.",
+    "product_card": {
+      "style": "Cardless, sharp edges. Image container with aspect-[4/5] overflow-hidden bg-zinc-100. Product name and category directly below image.",
+      "image_treatment": "Images must feel like a spotlight. Mix clipped frames and ample negative space."
+    },
+    "buttons": "Sharp-edged (rounded-none or max rounded-sm). Hover state inverts colors or adds a 1px border. Use group-hover for internal icon motion.",
+    "marquee": {
+      "style": "The 'Editorial Ribbon'. Low contrast (warm sand background, emerald text), slow smooth drift, uppercase serif or mono text separated by star/diamond icons."
+    },
+    "manifesto_chapters": "Large numbers (01, 02) in Cormorant Garamond, paired with a small paragraph of brand philosophy. Border-top on each chapter to create a ledger/document look.",
+    "forms": "Guest Enquiry Form: Shadcn UI elements but heavily customized. Square corners, thin borders, floating labels or minimal top labels. Background must match the container."
+  },
+  "image_urls": {
+    "hero_abstract": "https://images.unsplash.com/photo-1567016376408-0226e4d0c1ea?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2OTV8MHwxfHNlYXJjaHwxfHxtaW5pbWFsJTIwbHV4dXJ5JTIwYXJjaGl0ZWN0dXJlJTIwaW50ZXJpb3J8ZW58MHx8fHwxNzg2NTU0MTA1fDA&ixlib=rb-4.1.0&q=85",
+    "categories": {
+      "stationery": "https://images.unsplash.com/photo-1501618669935-18b6ecb13d6d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwxfHxwcmVtaXVtJTIwc3RhdGlvbmVyeSUyMHBlbiUyMG5vdGVib29rfGVufDB8fHx8MTc4NjU1NDA4OXww&ixlib=rb-4.1.0&q=85",
+      "healthy_food": "https://images.unsplash.com/photo-1535473895227-bdecb20fb157?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHwxfHxoZWFsdGh5JTIwZ291cm1ldCUyMGZvb2QlMjBib3h8ZW58MHx8fHwxNzg2NTU0MDg5fDA&ixlib=rb-4.1.0&q=85",
+      "wellness": "https://images.unsplash.com/photo-1625189135119-8fcf7ba609fb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2MDV8MHwxfHNlYXJjaHw0fHxsdXh1cnklMjB3ZWxsbmVzcyUyMGVzc2VudGlhbCUyMG9pbHN8ZW58MHx8fHwxNzg2NTU0MDg5fDA&ixlib=rb-4.1.0&q=85",
+      "grooming": "https://images.unsplash.com/photo-1577467014381-aa7c13dbf331?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjV8MHwxfHNlYXJjaHw0fHxwcmVtaXVtJTIwZ3Jvb21pbmclMjBraXR8ZW58MHx8fHwxNzg2NTU0MDg5fDA&ixlib=rb-4.1.0&q=85",
+      "audio": "https://images.unsplash.com/photo-1556196148-1fb724238998?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNDR8MHwxfHNlYXJjaHwzfHxwcmVtaXVtJTIwaGVhZHBob25lcyUyMGRlc2t8ZW58MHx8fHwxNzg2NTU0MDg5fDA&ixlib=rb-4.1.0&q=85",
+      "work_accessories": "https://images.unsplash.com/photo-1700451761309-656bd9439443?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTN8MHwxfHNlYXJjaHwzfHxvZmZpY2UlMjBkZXNrJTIwYWNjZXNzb3JpZXMlMjBsdXh1cnl8ZW58MHx8fHwxNzg2NTU0MDg5fDA&ixlib=rb-4.1.0&q=85"
+    }
+  },
+  "accessibility": {
+    "contrast": "Ensure primary dark text over warm sand backgrounds meets WCAG AA (4.5:1).",
+    "reduced_motion": "Wrap Framer Motion props with prefers-reduced-motion checks if necessary.",
+    "test_ids": "CRITICAL: All interactive elements (buttons, cart add, form inputs, navigation links) MUST include a data-testid attribute formatted as kebab-case based on role (e.g. data-testid=\"cart-checkout-button\")."
+  },
+  "instructions_to_main_agent": [
+    "Use ONLY JavaScript (.js / .jsx). DO NOT output TypeScript (.tsx).",
+    "Ensure Shadcn UI components are installed and modified to remove 'Vercel' rounded corners, replacing them with sharp, premium edges.",
+    "Do not use generic 'Inter' for headings. Install 'Cormorant Garamond' and 'Manrope' via Google Fonts in index.css.",
+    "Never use fully transparent backgrounds on interactive overlays like dropdowns or sticky navs. Always use solid or heavily blurred glass.",
+    "Implement Lenis for smooth scrolling at the root level.",
+    "Implement the Enquiry Cart state using a global store (Zustand or React Context) so users can add products from the grid and review them in a slide-out cart or separate page before submitting the quote form."
+  ],
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "You tend to converge toward generic, 'on distribution' outputs. Avoid this. Make creative, distinctive frontends that surprise and delight.",
+    "Don't make generic centered layouts. Create depth through layered design elements with z-index hierarchy.",
+    "Use 2-3x more spacing than feels comfortable. Cramped designs look cheap.",
+    "NEVER use AI assistant Emoji characters (🤖🧠💭💡🔮) for icons. Use Phosphor Icons or Lucide.",
+    "Main agent relies on the provided image URLs. Missing categories = placeholder text, which is FORBIDDEN.",
+    "All interactive and key informational elements MUST include a data-testid attribute.",
+    "Use sonner for toast notifications, located in /app/src/components/ui/sonner.jsx.",
+    "DO NOT apply universal transitions (e.g. transition: all). Add transitions only to specific properties like opacity, background-color, or transform."
+  ]
+}
