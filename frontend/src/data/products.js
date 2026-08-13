@@ -3,10 +3,10 @@ export const COMPANY = {
   tagline: "Creating Connections Through Custom Merchandise",
   about: "Corporate Merchandise, Gifts, Giveaways & more",
   phone: "+91 97264 71223",
-  email: "sales@zihamo.com",
-  website: "www.zihamo.com",
+  email: "sales@zihamo.in",
+  website: "www.zihamo.in",
   address:
-    "Shop 28, Mona Shopping Centre, JP Road, Dadabhai Rd, Near Navrang Cinema, Andheri (West), Mumbai - 400058",
+    "Iscon Emporio, Satellite, Ahmedabad",
   logo: "/zihamo-logo.png",
 };
 

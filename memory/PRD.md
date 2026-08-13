@@ -50,7 +50,7 @@ stationery, healthy food, wellness, grooming, audio, and work accessories. Must 
 ## Update (2026-08-13) — Real catalog integrated
 - Extracted the actual ZIHAMO logo from the client PDF (transparent PNG at `/frontend/public/zihamo-logo.png`), used in navbar + footer.
 - Replaced sample catalogue with 96 real products across 10 real categories (Stationery, Drinkware, Audio, Tech Accessories, Desk Accessories, Wellness & Fitness, Bags & Luggage, Apparel, Trophies & Awards, Gift Hampers) with real names, SKUs and specs from the PDF.
-- Applied real company details: tagline, about, Mumbai studio address, `sales@zihamo.com`, `www.zihamo.com`, and ONLY the first mobile number (+91 97264 71223) per request.
+- Applied real company details: tagline, about, studio address (Iscon Emporio, Satellite, Ahmedabad), `sales@zihamo.in`, `www.zihamo.in`, and ONLY the first mobile number (+91 97264 71223) per request.
 - Verified: 96 products, 10 categories, 11 filters, 0 broken images (110/110), logo loads, no console errors.
 
 ## Update (2026-06) — Real product photos + catalogue search
