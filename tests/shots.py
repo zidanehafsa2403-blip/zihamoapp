@@ -12,24 +12,23 @@ async def main():
     async with async_playwright() as p:
         b = await p.chromium.launch()
         pg = await b.new_page(viewport={"width":1440,"height":900})
+        errs=[]
+        pg.on("console", lambda m: errs.append(m.text) if m.type=="error" else None)
+        pg.on("pageerror", lambda e: errs.append("PAGEERR "+str(e)))
         await pg.goto(URL, wait_until="domcontentloaded", timeout=60000)
         await pg.wait_for_timeout(3500)
+        print("products=", await pg.locator('[data-testid^="product-"]').count(),
+              "categories=", await pg.locator('[data-testid^="category-"]').count(),
+              "filters=", await pg.locator('[data-testid^="filter-"]').count())
+        print("broken_images=", await pg.evaluate("[...document.images].filter(i=>i.complete && i.naturalWidth===0).length"),
+              "total=", await pg.evaluate("document.images.length"))
+        logo_ok = await pg.evaluate("(()=>{const i=[...document.images].find(x=>x.src.includes('zihamo-logo'));return i? i.naturalWidth: -1})()")
+        print("logo_naturalWidth=", logo_ok)
         await pg.evaluate("window.__lenis && window.__lenis.destroy()")
-        await shot(pg,'#categories','/tmp/z_categories.png')
-        await shot(pg,'#manifesto','/tmp/z_manifesto.png')
-        await shot(pg,'#catalogue','/tmp/z_catalogue.png')
-        await shot(pg,'#about','/tmp/z_about.png')
-        # cart
-        await pg.locator('[data-testid^="product-"]').first.hover()
-        await pg.wait_for_timeout(300)
-        await pg.locator('[data-testid^="add-"]').first.click()
-        await pg.wait_for_timeout(300)
-        await pg.locator('[data-testid=open-cart-button]').click()
-        await pg.wait_for_timeout(700)
-        await pg.screenshot(path='/tmp/z_cart.png')
-        await pg.locator('[data-testid=proceed-button]').click()
-        await pg.wait_for_timeout(600)
-        await pg.screenshot(path='/tmp/z_form.png')
+        await pg.screenshot(path="/tmp/z_hero2.png")
+        await shot(pg,'#catalogue','/tmp/z_catalogue2.png')
+        await shot(pg,'#contact','/tmp/z_footer2.png', offset=-40)
+        print("console_errors=", errs[:6])
         await b.close()
 asyncio.run(main())
 print("done")

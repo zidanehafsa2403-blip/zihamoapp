@@ -25,8 +25,8 @@ export const Hero = () => {
           transition={{ delay: 0.2, duration: 1 }}
           className="flex items-center justify-between"
         >
-          <Overline className="text-[#D5CDBF]">Corporate Gifting · Est. Healthcare</Overline>
-          <Overline className="hidden text-[#D5CDBF] md:block">Non-Medical · Curated</Overline>
+          <Overline className="text-[#D5CDBF]">Corporate Merchandise · Gifts · Giveaways</Overline>
+          <Overline className="hidden text-[#D5CDBF] md:block">Non-Medical · Custom-Branded</Overline>
         </motion.div>
 
         <div className="max-w-[1400px]">
@@ -36,7 +36,7 @@ export const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
             >
-              <Overline className="text-[#D5CDBF]">Gifts worthy of the people who care</Overline>
+              <Overline className="text-[#D5CDBF]">Creating connections through custom merchandise</Overline>
             </motion.div>
           </div>
 
@@ -53,8 +53,9 @@ export const Hero = () => {
             className="mt-10 flex flex-col gap-8 md:flex-row md:items-end md:justify-between"
           >
             <p className="max-w-md text-base leading-relaxed text-[#EAE7E1]/90">
-              A curated house of non-medical gifts for healthcare professionals — stationery, wellness,
-              nourishment and refined desk companions. Browse, build a request, and we handle the rest.
+              Custom corporate merchandise, gifts and giveaways for pharmaceutical brands — non-medical
+              pieces for the healthcare professionals you value. Browse the range, build a request, and
+              we handle sourcing, branding and delivery.
             </p>
             <a
               href="#catalogue"

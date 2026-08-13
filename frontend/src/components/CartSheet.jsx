@@ -4,6 +4,7 @@ import { X, Minus, Plus, Trash2, ArrowRight } from "lucide-react";
 import axios from "axios";
 import { toast } from "sonner";
 import { useCart } from "../store/cart";
+import { COMPANY } from "../data/products";
 
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
@@ -137,6 +138,7 @@ export const CartSheet = () => {
                     />
                   </label>
                   <p className="text-sm text-[#4A4A4A]">{items.length} item{items.length !== 1 ? "s" : ""} in this enquiry.</p>
+                  <p className="text-xs text-[#4A4A4A]">Prefer to talk? Call <a href={`tel:${COMPANY.phone.replace(/\s/g, "")}`} className="text-[#153328] underline">{COMPANY.phone}</a> or email {COMPANY.email}.</p>
                 </div>
                 <div className="grid grid-cols-3 gap-3 border-t border-black/10 p-6">
                   <button type="button" data-testid="back-button" onClick={() => setStep("cart")} className="border border-[#153328] py-4 text-sm uppercase tracking-wide text-[#153328]">

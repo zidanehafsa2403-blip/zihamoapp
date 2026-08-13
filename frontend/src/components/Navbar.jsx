@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { ShoppingBag } from "lucide-react";
 import { useCart } from "../store/cart";
+import { COMPANY } from "../data/products";
 
 const LINKS = [
   { label: "Collections", href: "#categories" },
@@ -30,8 +31,11 @@ export const Navbar = () => {
       }`}
     >
       <div className="mx-auto max-w-[1600px] px-6 md:px-12 flex items-center justify-between">
-        <a href="#top" data-testid="logo" className={`font-serif-z text-2xl tracking-tight ${scrolled ? "text-[#153328]" : "text-[#F9F8F6]"}`}>
-          ZIHAMO<span className="text-[#A34C37]">.</span>
+        <a href="#top" data-testid="logo" className="flex items-center gap-3">
+          <img src={COMPANY.logo} alt="ZIHAMO" className="h-10 w-10 rounded-full object-cover ring-1 ring-black/5" />
+          <span className={`font-serif-z text-2xl tracking-tight ${scrolled ? "text-[#153328]" : "text-[#F9F8F6]"}`}>
+            ZIHAMO<span className="text-[#A34C37]">.</span>
+          </span>
         </a>
 
         <nav className="hidden md:flex items-center gap-10">

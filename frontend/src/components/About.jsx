@@ -3,8 +3,8 @@ import { useRef } from "react";
 import { Reveal, Overline } from "./Motion";
 
 const STATS = [
-  { k: "6", v: "Curated houses" },
-  { k: "500+", v: "Vetted pieces" },
+  { k: "10", v: "Collections" },
+  { k: "300+", v: "Products" },
   { k: "48h", v: "Quote turnaround" },
   { k: "PAN", v: "India fulfilment" },
 ];

@@ -1,7 +1,8 @@
 import Marquee from "react-fast-marquee";
 
 const WORDS = [
-  "Stationery", "Healthy Food", "Wellness", "Grooming", "Audio", "Work Accessories",
+  "Stationery", "Drinkware", "Audio", "Tech Accessories", "Desk Accessories",
+  "Wellness", "Bags & Luggage", "Apparel", "Trophies", "Gift Hampers",
 ];
 
 const Diamond = () => (
