@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { ShoppingBag, Store } from "lucide-react";
+import { ShoppingBag } from "lucide-react";
 import { useCart } from "../store/cart";
 import { COMPANY } from "../data/products";
 
@@ -53,19 +52,6 @@ export const Navbar = () => {
           ))}
         </nav>
 
-        <div className="flex items-center gap-3">
-        <Link
-          data-testid="nav-shop-link"
-          to="/shop"
-          className={`flex items-center gap-2 px-5 py-2.5 text-sm transition-colors duration-300 ${
-            scrolled
-              ? "bg-[#153328] text-[#F9F8F6] hover:bg-[#0F1C18]"
-              : "bg-[#F9F8F6] text-[#153328] hover:bg-[#EAE7E1]"
-          }`}
-        >
-          <Store className="h-4 w-4" strokeWidth={1.5} />
-          <span className="tracking-wide">Shop</span>
-        </Link>
         <button
           data-testid="open-cart-button"
           onClick={() => setOpen(true)}
@@ -84,7 +70,6 @@ export const Navbar = () => {
             {count}
           </span>
         </button>
-        </div>
       </div>
     </header>
   );

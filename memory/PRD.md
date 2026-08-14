@@ -63,7 +63,12 @@ stationery, healthy food, wellness, grooming, audio, and work accessories. Must 
 ## Update (2026-06) — WhatsApp tap-to-chat
 - Floating WhatsApp button (`WhatsAppButton.jsx`, `data-testid="whatsapp-button"`), bottom-left, opens wa.me/919726471223 with a pre-filled enquiry message; hover-expanding "Chat with us" label. Verified live.
 
-## Update (2026-06) — "/shop" Myntra-style shopping app
+## Update (2026-06) — Project split
+- User decision: website and shop app become SEPARATE Emergent projects. Website stays HERE; shop app moves to a new project.
+- Shop app fully removed from this codebase (routes, `src/shop/`, shopCart store, PRICES, orders API, canvas-confetti, navbar Shop button). Site restored to single-page marketing + enquiry flow. Verified live.
+- Complete standalone export prepared at `/app/shop-export/` (README + frontend src with shop at root routes + 96 product photos + logo + backend orders API). User flow: Save to GitHub here → new Emergent project → import repo via GitHub button → new agent follows `/app/shop-export/README.md`.
+
+## History (2026-06) — "/shop" Myntra-style shopping app (now moved to export)
 - New route structure (`App.js`): `/` = existing landing (Lenis kept there only), `/shop/*` = app experience (`src/shop/`). "Shop" button added to landing navbar (`nav-shop-link`).
 - Fun opening: animated splash (emerald, logo spring + letter stagger, once per session) → shop home.
 - Shop home: search + category chips + 2-4 col grid, cards show price/MRP-strikethrough/% off, quick-add "+" with toast, floating cart bar with live count+total.

@@ -22,53 +22,68 @@ app = FastAPI()
 api_router = APIRouter(prefix="/api")
 
 
-class EnquiryItem(BaseModel):
+class OrderItem(BaseModel):
     id: str
+    sku: str = ""
     name: str
-    category: str
+    category: str = ""
     quantity: int = 1
+    price: float = 0
 
 
-class EnquiryCreate(BaseModel):
-    company: str
-    contact_name: str
+class OrderCreate(BaseModel):
+    name: str
+    phone: str
     email: EmailStr
-    phone: str = ""
-    message: str = ""
-    items: List[EnquiryItem] = []
+    company: str = ""
+    gstin: str = ""
+    address: str
+    city: str = ""
+    pincode: str
+    items: List[OrderItem] = []
+    subtotal: float = 0
+    total: float = 0
 
 
-class Enquiry(BaseModel):
+class Order(BaseModel):
     model_config = ConfigDict(extra="ignore")
 
     id: str = Field(default_factory=lambda: str(uuid.uuid4()))
-    company: str
-    contact_name: str
+    order_no: str = Field(default_factory=lambda: "ZH" + uuid.uuid4().hex[:6].upper())
+    name: str
+    phone: str
     email: str
-    phone: str = ""
-    message: str = ""
-    items: List[EnquiryItem] = []
-    status: str = "new"
+    company: str = ""
+    gstin: str = ""
+    address: str
+    city: str = ""
+    pincode: str
+    items: List[OrderItem] = []
+    subtotal: float = 0
+    total: float = 0
+    status: str = "placed"
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
 
 @api_router.get("/")
 async def root():
-    return {"message": "ZIHAMO API"}
+    return {"message": "ZIHAMO Shop API"}
 
 
-@api_router.post("/enquiries", response_model=Enquiry)
-async def create_enquiry(payload: EnquiryCreate):
-    enquiry = Enquiry(**payload.model_dump())
-    doc = enquiry.model_dump()
+@api_router.post("/orders", response_model=Order)
+async def create_order(payload: OrderCreate):
+    if not payload.items:
+        raise HTTPException(status_code=400, detail="Cart is empty")
+    order = Order(**payload.model_dump())
+    doc = order.model_dump()
     doc['created_at'] = doc['created_at'].isoformat()
-    await db.enquiries.insert_one(doc)
-    return enquiry
+    await db.orders.insert_one(doc)
+    return order
 
 
-@api_router.get("/enquiries", response_model=List[Enquiry])
-async def list_enquiries():
-    docs = await db.enquiries.find({}, {"_id": 0}).sort("created_at", -1).to_list(1000)
+@api_router.get("/orders", response_model=List[Order])
+async def list_orders():
+    docs = await db.orders.find({}, {"_id": 0}).sort("created_at", -1).to_list(1000)
     for d in docs:
         if isinstance(d.get('created_at'), str):
             d['created_at'] = datetime.fromisoformat(d['created_at'])

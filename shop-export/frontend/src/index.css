@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Manrope:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --z-bg: #F9F8F6;
+  --z-bg-2: #EAE7E1;
+  --z-emerald: #153328;
+  --z-dark: #0F1C18;
+  --z-sand: #D5CDBF;
+  --z-terracotta: #A34C37;
+  --z-ink: #1A1A1A;
+}
+
+@layer base {
+  :root {
+    --background: 40 20% 97%;
+    --foreground: 0 0% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+    --popover: 40 20% 97%;
+    --popover-foreground: 0 0% 10%;
+    --primary: 156 41% 14%;
+    --primary-foreground: 40 20% 97%;
+    --secondary: 40 12% 90%;
+    --secondary-foreground: 156 41% 14%;
+    --muted: 40 12% 90%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 14 51% 43%;
+    --accent-foreground: 40 20% 97%;
+    --destructive: 0 72% 45%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 88%;
+    --input: 0 0% 84%;
+    --ring: 156 41% 14%;
+    --radius: 0.125rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Manrope', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background-color: var(--z-bg);
+    color: var(--z-ink);
+  }
+  ::selection {
+    background: var(--z-emerald);
+    color: var(--z-bg);
+  }
+}
+
+.font-serif-z {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.line-mask {
+  overflow: hidden;
+  display: block;
+}
+
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+.scrollbar-none { scrollbar-width: none; }
+.scrollbar-none::-webkit-scrollbar { display: none; }
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--z-bg-2); }
+::-webkit-scrollbar-thumb { background: var(--z-emerald); }
