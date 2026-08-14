@@ -63,3 +63,15 @@ stationery, healthy food, wellness, grooming, audio, and work accessories. Must 
 ## Update (2026-06) — WhatsApp tap-to-chat
 - Floating WhatsApp button (`WhatsAppButton.jsx`, `data-testid="whatsapp-button"`), bottom-left, opens wa.me/919726471223 with a pre-filled enquiry message; hover-expanding "Chat with us" label. Verified live.
 
+## Update (2026-06) — "/shop" Myntra-style shopping app
+- New route structure (`App.js`): `/` = existing landing (Lenis kept there only), `/shop/*` = app experience (`src/shop/`). "Shop" button added to landing navbar (`nav-shop-link`).
+- Fun opening: animated splash (emerald, logo spring + letter stagger, once per session) → shop home.
+- Shop home: search + category chips + 2-4 col grid, cards show price/MRP-strikethrough/% off, quick-add "+" with toast, floating cart bar with live count+total.
+- Product page `/shop/p/:id`: large image, price block, qty stepper, add-to-cart, "Go to cart", related rail.
+- Cart `/shop/cart`: qty steppers, remove, price details (MRP/discount/free delivery/total), persisted via zustand persist (localStorage `zihamo-shop-cart`).
+- Checkout `/shop/checkout` (no login): name, phone, email, company, GST (optional), address, city, 6-digit pincode → POST `/api/orders`.
+- Success page: canvas-confetti burst, order number (ZHxxxxxx), continue shopping. Cart cleared.
+- Placeholder prices: editable `PRICES` map keyed by SKU in `products.js` (96 SKUs).
+- Backend: `POST /api/orders` (400 on empty cart), `GET /api/orders`, stored in `orders` collection with order_no.
+- Testing agent iteration_1: backend 100%, frontend 100% (splash, browse, filters, search, add, cart persistence, checkout, success, landing regression all pass).
+
